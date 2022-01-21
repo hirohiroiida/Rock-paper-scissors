@@ -6,15 +6,14 @@ end
 puts "#{games}本勝負を選びました。"
 puts #改行
 
-count = 1
+now_game = 1
 win = 0
 lose = 0
-finish_game = 0
 
-while finish_game < games
-  puts "#{count}本目"
+while now_game <= games
+  puts "#{now_game}本目"
   puts "じゃんけん…(press g or c or p)"
-  until win + lose == count
+  until win + lose == now_game
     you = gets.chomp
     com = ["g", "c", "p"].sample
 
@@ -59,8 +58,7 @@ while finish_game < games
 
   end
   puts #改行
-  count += 1
-  finish_game = win + lose
+  now_game += 1
 end
 
 puts "結果"
@@ -69,6 +67,4 @@ if win > lose
 else
   puts "#{win}勝#{lose}敗であなたの負け"
 end
-
-
 
